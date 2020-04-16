@@ -3,19 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/tables.css">
     <title>Comercial Jatobá</title>
 </head>
 <body>
-    <nav id="menu">
-        <a href="index.html">HOME</a> | 
-        <a href="controle_estoque.html">ESTOQUE</a> | 
-        <a href="adicionar_produto.html">CADASTRO DE PRODUTO</a> | 
-        <a href="funcionarios.html">FUNCIONÁRIOS</a>
-    </nav>
-
-    <div id ="table">
-        <br>
-        <table>
+    <header id="header">
+        <nav id="menu">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="controle_estoque.html">ESTOQUE</a></li>
+                <li><a href="adicionar_produto.html">CADASTRO DE PRODUTO</a></li>
+                <li><a href="funcionarios.html">FUNCIONÁRIOS</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div id="main">
+        <h1 class="titulo">Estoque Disponível</h1>
+        <table id="table_estoque">
             <tr>
                 <th>Produto</th>
                 <th>Descrição</th>
@@ -23,49 +29,58 @@
                 <th>Quantidade</th>
             </tr>
             <tr>
-                <td><img src="imagens/magicmouse.png"><p>Magic Mouse 2</p></td>
-                <td>Apple Magic Mouse, conexão bluetooth, recarregável.</td>
+                <td><img src="imagens/magicmouse.png" alt="Apple Magic Mouse"><p>Magic Mouse 2</p></td>
+                <td class="tbl_estoq_desc">Apple Magic Mouse, conexão bluetooth, recarregável.</td>
                 <td>R$600,00</td>
                 <td>10</td>
             </tr>
             <tr>
-                <td><img src="imagens/applewatch.png"><p>Apple Watch Series 5</p></td>
-                <td>Smart watch Apple, otimo para praticantes de atividade física.</td>
+                <td><img src="imagens/applewatch.png" alt="Apple Watch"><p>Apple Watch Series 5</p></td>
+                <td class="tbl_estoq_desc">Smart watch Apple, otimo para praticantes de atividade física.</td>
                 <td>R$3000,00</td>
                 <td>5</td>
             </tr>
             <tr>
-                <td><img src="imagens/ipadgrey.png"><p>iPad Cinza</p></td>
-                <td>Apple iPad, perfeito para quem tem crianças como tambem para adultos.</td>
+                <td><img src="imagens/ipadgrey.png" alt="iPad Cinza"><p>iPad Cinza</p></td>
+                <td class="tbl_estoq_desc">Apple iPad, perfeito para quem tem crianças como tambem para adultos.</td>
                 <td>R$2500,00</td>
                 <td>2</td>
             </tr>
             <tr>
-                <td><img src="imagens/iphonepurple.png"><p>iPhone 11 roxo</p></td>
-                <td>O queridinho, smartphone, tenha tudo que precisa na palma da sua mão</td>
+                <td><img src="imagens/iphonepurple.png" alt="iPhone 11 Roxo"><p>iPhone 11 roxo</p></td>
+                <td class="tbl_estoq_desc">O queridinho, smartphone, tenha tudo que precisa na palma da sua mão</td>
                 <td>R$8000.00</td>
                 <td>15</td>
             </tr>
             <tr>
-                <td><img src="imagens/lpvaio.png"><p>Laptop Vaio</p></td>
-                <td>Perfeito pra quem precisa de um laptop para trabalho e ao mesmo tempo para uso pessoal.</td>
+                <td><img src="imagens/lpvaio.png" alt="Laptop Vaio"><p>Laptop Vaio</p></td>
+                <td class="tbl_estoq_desc">Perfeito pra quem precisa de um laptop para trabalho e ao mesmo tempo para uso pessoal. Simplesmente incrivel.</td>
                 <td>R$7500,00</td>
                 <td>12</td>
             </tr>
             <tr>
-                <td><img src="imagens/monitorsamsung.png"><p>Monitor Samsung 22"</p></td>
-                <td>Monitor LED HDMI Samsung</td>
+                <td><img src="imagens/monitorsamsung.png" alt="Monitor Samsung"><p>Monitor Samsung 22"</p></td>
+                <td class="tbl_estoq_desc">Monitor LED HDMI Samsung</td>
                 <td>R$ 599,00</td>
                 <td>3</td>
             </tr>
             <tr>
-                <td><img src="imagens/tvlg.png"><p>SmartTV LG 43"</p></td>
-                <td>SmartTV LG, led, possui todos os aplicativos.</td>
+                <td><img src="imagens/tvlg.png" alt="SmartTV LG"><p>SmartTV LG 43"</p></td>
+                <td class="tbl_estoq_desc">SmartTV LG, led, possui todos os aplicativos.</td>
                 <td>R$4200,00</td>
                 <td>9</td>
             </tr>
         </table>
     </div>
+
+    <footer id="footer">
+        <p>Comercial Jatobá Ltda.</p>
+        <p> New York Square, 5 andar.</p>
+        <p>Rua Pau Brasil, 270 - Vila Leste.</p>
+        <p>23456-980</p>
+        <p>Goiânia - Brasil</p>
+        <p>Tel: (62) 1234-5678</p>
+    </footer>
 
 </body>
 </html>
