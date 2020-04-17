@@ -1,0 +1,41 @@
+#form_func{
+    width:25%;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+label{
+    color: #FFFFFF;
+    font-size: 18px;
+    text-align: right;
+    
+}
+
+input{
+    color: #17334c;
+    border: 1px solid #17334c;
+    width: 200px;
+    padding: 5px;
+    outline: none;
+    border-radius: 2px;
+}
+
+textarea{
+    color: #17334c;
+    border: 1px solid #17334c;
+    width: 200px;
+    padding: 5px;
+    outline: none;
+    border-radius: 2px;
+}
+
+button{
+    color: #17334C;
+    border: 1px solid #17334c;
+    border-radius: 2px;
+    padding: 3px;
+    margin-left: auto;
+    margin-right: auto;
+}

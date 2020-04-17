@@ -3,74 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/tables.css">
     <title>Comercial Jatobá</title>
 </head>
 <body>
-    <nav id="menu">
-        <a href="index.html">HOME</a> | 
-        <a href="controle_estoque.html">ESTOQUE</a> | 
-        <a href="adicionar_produto.html">CADASTRO DE PRODUTO</a> | 
-        <a href="funcionarios.html">FUNCIONÁRIOS</a>
-    </nav>
-    <br>
-    <div id="funcionarios">
-        <table>
-            <tr>
-                <th>Colaboradores</th>
-            </tr>
-            <tr>
-                <th>Nome</th>
-                <th>Nascimento</th>
-            </tr>
-            <tr>
-                <td>Manoel Neto</td>
-                <td>13/06/1993</td>
-            </tr>
-            <tr>
-                <td>Lisia Queiroz</td>
-                <td>26/11/1996</td>
-            </tr>
-            <tr>
-                <td>Kevin Casserly</td>
-                <td>18/06/1994</td>
-            </tr>
-            <tr>
-                <td>Walkiria Procopio</td>
-                <td>29/08/1968</td>
-            </tr>
-            <tr>
-                <td>Ezio Faleiros</td>
-                <td>26/03/1968</td>
-            </tr>
-            <tr>
-                <td>Laura Faleiros</td>
-                <td>29/03/2019</td>
-            </tr>
-            <tr>
-                <td>Eleusa Oliveira</td>
-                <td>21/111970</td>
-            </tr>
-            <tr>
-                <td>Lindalva Passos</td>
-                <td>13/01/1942</td>
-            </tr>
-            <tr>
-                <td>Ana Carolina</td>
-                <td>06/06/1993</td>
-            </tr>
-            <tr>
-                <td>Luisa Rodrigues</td>
-                <td>24/01/1993</td>
-            </tr>
-            <tr>
-                <td>Heloisa Braga</td>
-                <td>04/02/1993</td>
-            </tr>
-            <tr>
-                <td>Marilia Furquim</td>
-                <td>06/01/1993</td>
-            </tr>
-        </table>
+    <header id="header">
+        <nav id="menu">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="controle_estoque.html">ESTOQUE</a></li>
+                <li><a href="adicionar_produto.html">CADASTRO DE PRODUTO</a></li>
+                <li><a href="funcionarios.html">FUNCIONÁRIOS</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="main">
+        <h1 class="titulo">Colaboradores</h1>
+        <h3 class="desc">Na nossa empresa acreditamos muitos nas relações 
+            e no reconhecimento de um trabalho bem feito, muito
+         obrigado à todos os nossos colaboradores por seu excelente
+         desempenho, sem vocês a Comercial Jatobá não teria sucesso.</h3>
+            <table id="table_funcionarios">
+                <tr>
+                    <th>Nome</th>
+                    <th>Nascimento</th>
+                </tr>
+                <tr>
+                    <td>Manoel Neto</td>
+                    <td>13/06/1993</td>
+                </tr>
+                <tr>
+                    <td>Lisia Queiroz</td>
+                    <td>26/11/1996</td>
+                </tr>
+                <tr>
+                    <td>Kevin Casserly</td>
+                    <td>18/06/1994</td>
+                </tr>
+                <tr>
+                    <td>Walkiria Procopio</td>
+                    <td>29/08/1968</td>
+                </tr>
+                <tr>
+                    <td>Ezio Faleiros</td>
+                    <td>26/03/1968</td>
+                </tr>
+                <tr>
+                    <td>Laura Faleiros</td>
+                    <td>29/03/2019</td>
+                </tr>
+                <tr>
+                    <td>Eleusa Oliveira</td>
+                    <td>21/111970</td>
+                </tr>
+                <tr>
+                    <td>Lindalva Passos</td>
+                    <td>13/01/1942</td>
+                </tr>
+                <tr>
+                    <td>Ana Carolina</td>
+                    <td>06/06/1993</td>
+                </tr>
+                <tr>
+                    <td>Luisa Rodrigues</td>
+                    <td>24/01/1993</td>
+                </tr>
+                <tr>
+                    <td>Heloisa Braga</td>
+                    <td>04/02/1993</td>
+                </tr>
+                <tr>
+                    <td>Marilia Furquim</td>
+                    <td>06/01/1993</td>
+                </tr>
+            </table>
+        </div>
     </div>
+    
+    <footer id="footer">
+        <p>Comercial Jatobá Ltda.</p>
+        <p> New York Square, 5 andar.</p>
+        <p>Rua Pau Brasil, 270 - Vila Leste.</p>
+        <p>23456-980</p>
+        <p>Goiânia - Brasil</p>
+        <p>Tel: (62) 1234-5678</p>
+    </footer>
 </body>
 </html>

@@ -1,0 +1,42 @@
+#table_estoque{
+    width: 80%;
+    padding-top: 80px;
+    padding-bottom: 30px;
+    table-layout: fixed;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#table_funcionarios{
+    width: 30%;
+    padding-top: 80px;
+    padding-bottom: 30px;
+    table-layout: fixed;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+th{ 
+    font-size: 24px;
+    color: #17334c;
+}
+
+td img{
+    padding-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td p{
+    padding-top: 10px;
+    padding-bottom: 20px;
+    color: FFFFFF;
+    text-align: center;;
+}
+
+td {
+    font-size: 18px;
+    color: #FFFFFF;
+    text-align: center;
+}
