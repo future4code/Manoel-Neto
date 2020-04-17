@@ -4,14 +4,13 @@
 }
 
 #header{
-    position: fixed;
     width: 100%;
-    position: -webkit-sticky;
+    position: fixed;
+    position: -webkit-fixed;
     top: 0;
 }
 
 #menu {
-    padding: 0px;
     background-color: #1a78a9;
     height: 60px;
 }
