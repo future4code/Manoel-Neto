@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#header{
+    width: 100%;
+    position: fixed;
+    position: -webkit-stiky;
+    top: 0;
+    left: 0;
+}
+
+#menu {
+    background-color: #BDB7A2;
+    height: 60px;
+}
+
+#menu ul{
+    text-align: right;
+}
+
+#menu ul li{
+    margin-top: 20px;
+    margin-right: 10px;
+    display: inline-block;
+    height: 60px;
+}
+
+#menu ul li a:link, #menu ul li a:visited{
+    padding: 0px 10px;
+    text-decoration: none;
+    color: #3D3B35;
+    display: block;
+}
+
+#main {;
+    height: auto;
+    margin-top: 60px;
+    background-color: #FCF8EB;
+}
+
+div#profile{
+    background-color: #FCF8EB;
+}
+
+img#profile{
+    float: left;
+    padding-top: 30px;
+    margin-left: 300px;
+    padding-bottom: 100px;
+}
+
+h3#profile{
+    padding-top: 30px;
+    margin-left: 460px;
+}
+
+p#profile{
+    text-align: justify;
+    padding-top: 10px;
+    margin-right: 250px;
+    margin-left: 460px;
+    padding-bottom: 40px;
+}
+
+div#projetos{
+    background-color: #FCF8EB;
+}
+
+img#project{
+    float: right;
+    padding-top: 108px;
+    margin-right: 250px;
+    padding-bottom: 100px;
+}
+
+h3#project{
+    clear: left;
+    padding-top: 30px;
+    margin-right: 410px;
+    margin-left: 300px;
+    text-align: right;
+}
+
+p#project{
+    clear: left;
+    text-align: justify;
+    padding-top: 10px;
+    margin-right: 410px;
+    margin-left: 300px;
+    padding-bottom: 40px;
+}
+
+div#contato{
+    clear: both;
+    overflow: hidden;
+    padding-top: 40px;
+    background-color: #FCF8EB;
+}
+
+#footer{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #3D3B35;
+    height: auto;
+}
+
+footer h3{
+    clear: left;
+    text-align: center;
+    color: #E3DCC3;
+    height: 100px;
+    padding-bottom: 20px;
+    padding-top: 15px;
+}
+
+h2{
+    color:  #3D3B35;
+    padding-top: 30px;
+    padding: bottom: 30px;
+    text-align: center;
+}
+
+h4{
+    color: #3D3B35;
+    padding-top: 30px ;
+    padding: bottom: 30px;
+    text-align: center;
+}
+
+#social_media{
+    margin-top: -70px;
+    float: right;
+    margin-right: 490px;
+    display: inline;
+}
+
+footer img{
+    padding-right: 15px;
+}
