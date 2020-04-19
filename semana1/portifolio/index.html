@@ -4,24 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style_port.css">
+    <link rel="stylesheet" href="css/forms.css">
     <title>Manoel Neto</title>
 </head>
 <body>
     <header id="header">
         <nav id="menu">
             <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="about.html">ABOUT</a></li>
-                <li><a href="project_gallery.html">PROJETOS</a></li>
+                <li><a href="#">INÍCIO</a></li>
+                <li><a href="#projects">PORTIFÓLIO</a></li>
+                <li><a href="#contato">CONTATO</a></li>
             </ul>
         </nav>
     </header>
 
     <div id="main">
         <div id= "profile">
-            <img src="imagens/manoel_profile.png"  id="profile">
-            <h3 id="profile">SORBRE MIM</h3>
-            <p id="profile">Formado em Engenharia Civil pela Ponttífica Universidade
+            <img src="imagens/manoel_profile.png"  id="profilepic" width="250px">
+            <h1 id="nome">MANOEL BEZERRA DE QUEIROZ NETO</h1>
+
+            <h3 id="titulos">Engenheiro Civil | Desenvolvedor de Software</h3>
+
+            <div id="logos_center">
+                <a href="mailto:"><img class="icon_padding" src="imagens/linked_logo.png" alt="Logo LinkedIn" width="40px" ></a>
+                <a href="#"><img class="icon_padding" src="imagens/git_logo.png" alt="Logo GitHub" width="40px"></a>
+                <a href="#"><img class="icon_padding" src="imagens/twitter_logo.png" alt="Logo Twitter" width="40px"></a>
+                <a href="#"><img class="icon_padding" src="imagens/facebook_logo.png" alt="Logo Facebook" width="40px"></a>
+                <a href="#"><img class="icon_padding" src="imagens/email_logo.png" alt="Logo Email" width="40px"></a>
+            </div>
+
+            <h3 class="titulo">Sumário</h3>
+
+            <p id="sumario">Formado em Engenharia Civil pela Ponttífica Universidade
             Católica de Goiás, resolveu se mudar para Irlanda para poder 
             aperfeiçoar a língua Inglesa, foi gostando do país e foi resolvendo
             estender sua estadia. Após um ano e meio de estudo da língua se deparou 
@@ -32,45 +46,104 @@
             estudar mais para se tornar um profissional capacitado para ingressar 
             na área, seja no Brasil ou na Irlanda.
             </p> 
-        </div>
 
-        <div id="projetos">
-            <img src="imagens/manoel_profile.jpg"  id="project">
-            <h3 id="project">PROJETOS</h3>
-            <p id="project">Monitoramente de Abate - Software desenvolvido como sendo parte 
-            do projeto final de curso no National College of Ireland. O qual é responsável 
-            pelo monitoramento de abates dentro de um Frigorifico, primeiramente voltado 
-            para a empresa frigorifica do meu avô. O software permitia as funcionalidades 
-            CRUD, crete (criar), read(ler), update(atualizar) e delete(deletar). Porém 
-            outras funcionalidade estavam em estudo para serem implementadas. As principais 
-            tecnologias usadas nesse projeto foram Java, HTML, CSS e API.
-            </p>
+            <h3 class="titulo">Instituições de Ensino</h3>
+
+            <p class="info">Labenu</p>
+            <p class= "location">São Paulo - Brasil</p>
+            <p class = "time">Abril 2020 - Atualmente</p>
+
+            <p class="info">Irish Academy of Computer Training</p>
+            <p class= "location">Dublin - Ireland</p>
+            <p class = "time">Julho 2019 - Outubro 2019</p>
+
+            <p class="info">National College of Ireland</p>
+            <p class= "location">Dublin - Ireland</p>
+            <p class = "time">Janeiro 2018 - Março 2019</p>
+
+            <p class="info">Pontifícia Universidade Católica de Goiás</p>
+            <p class= "location">Dublin - Ireland</p>
+            <p class = "time">Agosto 2011 - Julho 2016</p>
+
+            <h3 class="titulo">Experiência Profissional</h3>
+
+            <p class="info">WeCount</p>
+            <p class= "location">Dublin - Ireland</p>
+            <p class = "time">Maio 2019 - Novembro 2019</p>
+
+            <p class="info">RGIS</p>
+            <p class= "location">Dublin - Ireland</p>
+            <p class = "time">Abril 2018 - Maio 2019</p>
+
+            <p class="info">SANEAGO</p>
+            <p class= "location">Goiânia - Brasil</p>
+            <p class = "time">Janeiro 2016 - Julho 2016</p>
+
+            <h3 class="titulo">Skills</h3>
+            <div id="skills">
+            <p class = "info">Técnicos</p>
+            <ul class="skills">
+                <li>Java</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>MySQL</li>
+                <li>JavaScript</li>
+                <li>C++</li>
+                <li>MsOffice</li>
+                <li>AutoCAD</li>
+            </ul>
+            <p class = "info">Comportamentais</p>
+            <ul class="skills">
+                <li>Trabalho em equipe</li>
+                <li>Iniciativa própria</li>
+                <li>Apredizado-rápido</li>
+                <li>Auto-aprendizado</li>
+                <li>Gerenciamento de tempo</li>
+                <li>Proativo</li>
+                <li>Organizado</li>
+            </ul>
+        </div>
+        </div>
+        <div>
+            <hr>
+        </div>
+        <div id="projects">
+            <h3 id="project_inicio">PROJETOS</h3>
+            <h5 class="sub">Para saber mais, clique na imagem.</h5>
+            <div id="imagens">
+                <a href="project_future4.html"><img src="imagens/future4pr.jpg" alt="Projeto Future4" width="400px"></a>
+
+                <a href="project_frigofortt.html"><img  src="imagens/frigopr.jpg" alt=" Projeto Frigo Fortt" width="400px"></a>
+
+                <a href="project_weddings.html"><img  src="imagens/weddingspr.jpg" alt="Projeto Weddings" width="400px"></a> 
+            </div>
+        </div>
+        <div>
+            <hr>
         </div>
 
         <div id="contato">
-            <h2>Entre em contato comigo</h2>
-            <h4>É muito fácil, é so completar o formulário abaixo!</h4>
+            <h3 id= "contato">CONTATO</h3>
+            <h5 class= "sub">Complete o formulário abaixo</h5>
 
-            <form id="contato">
-                <p><label for="nome">Nome:</label></p>
+            <form id="form">
+                <p><label for="nome">Nome:</label> </p>
                 <p><input id="nome" name="nome" type="text"></p>
+                <span>&nbsp;</span>
                 <p><label for="nome">E-mail:</label></p>
                 <p><input id="nome" name="nome" type="text"></p>
+                <span>&nbsp;</span>
                 <p><label for="nome">Mensagem:</label></p>
-             <p><textarea id="nome" name="nome" type="text">Escreva sua mensagem aqui.</textarea></p>
+                <p><textarea id="nome" name="nome" type="text">Escreva sua mensagem aqui.</textarea></p>
+                <p>
+                    <button id="button_submit" type="submit">Enviar</button>
+                 </p>
             </form>
         </div>
     </div>
-
+        
     <footer id="footer">
-        <h3>onde me encontrar</h3>
-        <div id="social_media">
-            <img id="social" src="imagens/linked_logo.png" alt="Logo LinkedIn" width="50px" >
-            <img id="social" src="imagens/git_logo.png" alt="Logo GitHub" width="50px" style="padding-right: 5px;">
-            <img id="social" src="imagens/twitter_logo.png" alt="Logo Twitter" width="50px">
-            <img id="social" src="imagens/facebook_logo.png" alt="Logo Facebook" width="50px">
-            <img id="social" src="imagens/email_logo.png" alt="Logo Email" width="50px">
-        </div>
+        <p>Desenvolvido por Manoel Neto</p>
     </footer>
     
 </body>
