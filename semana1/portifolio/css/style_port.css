@@ -210,13 +210,6 @@ h1#project_title{
     padding-bottom: 20px;
 }
 
-:target:before {
-    content:"";
-    display:block;
-    height:60px; /* fixed header height*/
-    margin:-60px 0 0; /* negative fixed header height */
-}
-
 #button_submit{
     border: 1px solid #3d3b35;
     background-color: #ffffff;
