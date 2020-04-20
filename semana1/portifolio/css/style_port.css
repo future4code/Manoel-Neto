@@ -1,0 +1,239 @@
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+#header{
+    width: 100%;
+    position: fixed;
+    position: -webkit-stiky;
+    top: 0;
+    left: 0;
+}
+
+#menu {
+    background-color: #BDB7A2;
+    height: 40px;
+}
+
+#menu ul{
+    text-align: center;
+}
+
+#menu ul li{
+    margin-top: 10px;
+    display: inline-block;  
+}
+
+#menu ul li a:link, #menu ul li a:visited{
+    padding: 0px 5px;
+    text-decoration: none;
+    color: #3D3B35;
+    display: block;
+    
+}
+
+#main {
+    margin-top: 40px;
+    background-color: #FCF8EB;
+}
+
+hr{ 
+    clear: both;
+    margin-top: 20px;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, #FCF8EB 2%, #3D3B35 50%, #FCF8EB 98%);
+}
+
+img#profilepic{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 30px;
+}
+
+h1#nome{
+    color: #3d3b35;
+    text-align: center;
+    padding-top: 15px;
+}
+
+h3#titulos{
+    color: #3d3b35;
+    text-align: center;
+}
+
+#logos_center{
+    margin: auto;
+    width: 231px;
+    padding-top: 5px;
+    padding-bottom: 20px;
+}
+
+.icon_padding{
+    padding-right: 3px;
+}
+
+div#profile{
+    background-color: #FCF8EB;
+    height: auto;
+}
+
+h3.titulo{
+    color: #3d3b35;
+    padding-top: 10px;
+    margin: 0 350px;
+    padding-bottom: 10px;
+}
+
+p#sumario{
+    color: #3d3b35;
+    text-align: justify;
+    margin: 0 350px;
+    padding-bottom: 20px;
+}
+
+p.info{
+    color: #3d3b35;
+    text-align: justify;
+    margin: 0 350px;
+    padding-bottom: 5px;
+}
+
+p.location{
+    color: #3d3b35;
+    margin: 0 370px;
+}
+
+P.time{
+    color:  #3d3b35;
+    margin: 0 370px;
+    padding-bottom: 20px;
+
+}
+
+.skills {
+    margin: 0 370px;
+    list-style: none;
+    color: #3d3b35;
+    padding-bottom: 10px;
+}
+
+.project_container{
+    width: 100%;
+    height: auto;
+}
+
+
+div#projects{
+    background-color: #FCF8EB;
+}
+
+h3#project_inicio{
+    color: #3d3b35;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+p.project_inicio{
+    color: #3D3B35;
+    margin: 0  350px;
+    text-align: justify;
+    padding-bottom: 30px;
+}
+
+div#contato{
+    background-color: #FCF8EB;
+}
+
+h3#contato{
+    color: #3d3b35;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+h5.sub{
+    color: #3d3b35;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+#form{
+    width: 300px;
+    margin: auto;
+}
+
+p label{
+    font-weight: bold;
+    color: #3D3B35;
+    text-align: right;
+}
+p input{
+    border: 1px solid #3D3B35;
+    color: #3D3B36;
+    padding-bottom: 1px;
+    outline: none;
+    width: 300px;
+    margin-top: 2px;
+}
+
+p textarea{
+    border: 1px solid #3D3B35;
+    color: #3D3B35;
+    height: 200px;
+    width: 300px;
+    outline: none;
+    margin-bottom: 30px;
+    margin-top: 2px;
+}
+
+#footer{
+    background-color: #3D3B35;
+    height: auto;
+    text-align: right;
+}
+footer p{
+    color: #FCF8EB;
+    text-align: right;
+    margin-right: 20px;
+    padding: 10px 0;
+}
+
+h1#project_title{
+    color: #3d3b35;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+#button_submit{
+    border: 1px solid #3d3b35;
+    background-color: #ffffff;
+    color: #3d3b35;
+    padding: 2px;
+    margin-top: 8px;
+    margin-left: 265px;
+    margin-bottom: 30px;
+}
+
+#imagem_principal{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding-bottom: 20px;
+}
+
+div#imagens{
+    display: flex;
+    justify-content: center;
+}
+
+div#imagens img{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+}

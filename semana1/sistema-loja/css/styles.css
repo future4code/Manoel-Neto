@@ -4,10 +4,11 @@
 }
 
 #header{
-    position: fixed;
     width: 100%;
-    position: -webkit-sticky;
+    position: fixed;
+    position: -webkit-stiky;
     top: 0;
+    left: 0;
 }
 
 #menu {
@@ -36,7 +37,7 @@
 #main {
     background-color: #ff9400;
     height: auto;
-    margin-top: 60px;
+    margin-top:60px;
 }
 
 .titulo{
@@ -70,13 +71,20 @@
     height: auto;
 }
 
-#icons{
-
-}
-
 footer p{
     margin-left: 30px;
     color: #FFFFFF;
 }
 
+#social_media{
+    float: right;
+    margin-right: 50px;
+    margin-left: 200px;
+    padding-top: 30px;
+    
+}
 
+img.social {
+    padding-right: 20px;
+    display: inline-block
+}

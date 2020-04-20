@@ -10,10 +10,9 @@ label{
     color: #FFFFFF;
     font-size: 18px;
     text-align: right;
-    
 }
 
-input{
+#form_func input{
     color: #17334c;
     border: 1px solid #17334c;
     width: 200px;
@@ -22,7 +21,7 @@ input{
     border-radius: 2px;
 }
 
-textarea{
+#form_func textarea{
     color: #17334c;
     border: 1px solid #17334c;
     width: 200px;
@@ -39,3 +38,43 @@ button{
     margin-left: auto;
     margin-right: auto;
 }
+
+#form_vendas{
+    width: 20%;
+    margin: 0 auto;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+#form_vendas input[type=text], input[type=number]{
+    color: #17334c;
+    border: 1px solid #17334c;
+    width: 300px;
+    padding: 5px;
+    outline: none;
+    border-radius: 2px;
+}
+
+#form_vendas textarea{
+    color: #17334c;
+    border: 1px solid #17334c;
+    width: 300px;
+    height: 300px;
+    padding: 5px;
+    outline: none;
+    border-radius: 2px;
+}
+
+select{
+    width: 310px;
+    padding: 5px;
+    color: #17334c;
+    border: 1px solid #17334c;
+}
+
+#form_vendas span{
+    color: #17334c;
+    margin-right: 62px;
+
+}
+
