@@ -6,11 +6,7 @@
 #header{
     width: 100%;
     position: fixed;
-<<<<<<< HEAD
-    position: -webkit-fixed;
-=======
     position: -webkit-stiky;
->>>>>>> fb7d2d2c1d96697ac19a1ffe42a212d53c255644
     top: 0;
     left: 0;
 }
