@@ -1,0 +1,133 @@
+@media screen and (min-device-width: 421px) and (max-device-width: 800px){
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr) ;
+        grid-template-rows: repeat(9, 1fr) ;
+        height: auto;
+        background-color: white;
+        row-gap: 10px;
+    }
+    
+    .grey_box{
+        background-color: grey;
+        grid-row: 1 / 10;
+        grid-column: 1/ 2;
+    }
+    
+    .red_box {
+        background-color: red;
+        grid-row: 1 / 2;
+        grid-column: 2 / 6;
+        width: 100%;
+    }
+    
+    .blue_box {
+        color: black;
+        background-color: blue;
+        grid-column: 2 / 4;
+        border: 1px solid black;
+        margin: auto;
+        width: 50%;
+        height: 160px;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+     }
+    
+     .yellow_box {
+        color: black;
+        background-color: yellow;
+        grid-column: 4 / 6;
+        border: 1px solid black;
+        width: 50%;
+        height: 160px;
+        margin: auto;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+     }
+    
+     .green_box {
+        color: black;
+        background-color: green;
+        grid-column: 2/6;
+        border: 1px solid black;
+        display: grid;
+        width: 90%;
+        height: 120px;
+        justify-items: center;
+        align-items: center;
+        margin-left: auto;
+     }
+    
+     .black_box_one{
+        background-color: black;
+        color: white;
+        grid-row: 6 / 8;
+        grid-column: 2 / 4;
+        width: 70%;
+        height: 280px;
+        display: grid;
+        margin: auto;
+        justify-items: center;
+        align-items: center;
+     }
+    
+     .black_box_two{
+        background-color: black;
+        color: white;
+        grid-row: 6 / 8;
+        grid-column: 4 / 6;
+        width: 70%;
+        height: 280px;
+        display: grid;
+        margin: auto;
+        justify-items: center;
+        align-items: center;
+     }
+    
+     .white_box_one {
+        color: black;
+        border: 1px solid black;
+        grid-row: 8 / 9;
+        grid-column: 2 / 4;
+        margin: auto;
+        display: grid;
+        width: 70%;
+        height: 120px;
+        justify-items: center;
+        align-items: center;
+     }
+    
+     .white_box_two{
+        color: black;
+        border: 1px solid black;
+        grid-row: 8/ 9;
+        grid-column: 4 / 6;
+        margin: auto;
+        display: grid;
+        column-gap: 10px;
+        width: 70%;
+        height: 120px;
+        justify-items: center;
+        align-items: center;
+     }
+    
+     .white_box_three{
+        color: black;
+        border: 1px solid black;
+        grid-row: 9 / 10;
+        grid-column: 2 / 6;
+        margin: auto;
+        display: grid;
+        width: 90%;
+        height: 120px;
+        justify-items: center;
+        align-items: center;
+     }
+}
