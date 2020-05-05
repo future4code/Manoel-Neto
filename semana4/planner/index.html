@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
+    <title>Minha agenda</title>
+</head>
+<body>
+   <div id="container">
+       <header>
+           <div id="title">
+               <p>Minha agenda</p>
+           </div>
+           <div id="insertion">
+               <input type="text" id="task" placeholder="Ex. fazer a cama">
+               <select id="select_day">
+                   <option value="segunda">Segunda</option>
+                   <option value="terca">Terça</option>
+                   <option value="quarta">Quarta</option>
+                   <option value="quinta">Quinta</option>
+                   <option value="sexta">Sexta</option>
+                   <option value="sabado">Sábado</option>
+                   <option value="domingo">Domingo</option>
+               </select>
+               <button id="insert" onclick=insertTask()>Inserir</button>
+               <button id="clear" onclick=clearTask()>Limpar</button>
+           </div>
+       </header>
+       <div id="semana">
+           <div class="dia_semana" style="border-right: 1px solid goldenrod">
+               <p>Segunda</p>
+            </div>
+           <th>
+           <div class="dia_semana" style="border-right: 1px solid goldenrod">
+               <p>Terça</p>
+           </div>
+           <div class="dia_semana" style="border-right: 1px solid goldenrod">
+               <p>Quarta</p>
+           </div>
+           <div class="dia_semana" style="border-right: 1px solid goldenrod">
+               <p>Quinta</p>
+           </div>
+           <div class="dia_semana" style="border-right: 1px solid goldenrod">
+               <p>Sexta</p>
+           </div>
+           <div class="dia_semana"style="border-right: 1px solid goldenrod">
+               <p>Sabado</p>
+           </div>
+           <div class="dia_semana">
+               <p>Domingo</p>
+           </div>
+       </div>
+       <div id="to_do">
+           <div class="to_do" id="segunda" style="border-right: 1px solid goldenrod">
+               <ul>
+
+               </ul>
+           </div>
+           <div class="to_do" id="terca" style="border-right: 1px solid goldenrod">
+               <ul>
+
+               </ul>
+           </div>
+           <div class="to_do" id="quarta" style="border-right: 1px solid goldenrod">
+               <ul>
+
+               </ul>
+           </div>
+           <div class="to_do" id="quinta" style="border-right: 1px solid goldenrod">
+               <ul>
+
+               </ul>
+          </div>
+          <div class="to_do" id="sexta" style="border-right: 1px solid goldenrod">
+              <ul>
+
+              </ul> 
+          </div>
+          <div class="to_do" id="sabado" style="border-right: 1px solid goldenrod">
+               <ul>
+
+               </ul>
+          </div>
+          <div class="to_do" id="domingo">
+              <ul>
+
+              </ul>  
+          </div>
+       </div>
+   </div>
+</body>
+</html>
