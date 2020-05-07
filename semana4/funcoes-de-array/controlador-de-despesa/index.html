@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
+    <title>Despesas</title>
+</head>
+<body>
+    <head>
+
+    </head>
+    
+    <main>
+        <h1>Controlador de despesas</h1>
+        <div id="container">
+            <section class="inicial1">
+                <h3>Cadastrar Despesa</h3>
+                <label for="value">Valor: </label><input id="billValue" type="text" placeholder="60"><br>
+                <label for="billType">Tipo: </label>
+                <select id="registerType">
+                    <option value="empty"></option>
+                    <option value="petshop">Pet Shop</option>
+                    <option value="aula de linguas">Aulas de Linguas</option>
+                    <option value="academia">Academia</option>
+                </select><br>
+                <label for="description">Descrição</label><input id="description" placeholder="breve descricao"><br>
+                <button onclick="registerBill()">Inserir</button>
+            </section>
+
+            <section class="inicial1">
+                <h3>Despesas detalhadas</h3>
+                <label for="billType">Tipo: </label>
+                <select id="filterType">
+                    <option value = "empty"></option>
+                    <option value="petshop">Pet Shop</option>
+                    <option value="aulasPortugues">Aulas de Português</option>
+                    <option value="academia">Academia</option>
+                </select><br>
+                <label for="minVal">Valor minimo: </label><input type="text" id="minVal"><br>
+                <label for="maxVal">Valor maximo: </label><input type="text" id="maxVal"><br>
+                <button onclick="filterBills()">Filtrar</button><button type="reset" onclick="reset()">Limpar filtos</button>
+            </section>
+    
+            <section class="inicial1">
+                <p>Total:</p><span id="total"></span>
+            </section>
+        </div>
+        <div id="container2">
+            <section class="inicial" id="allBills">
+
+            </section>
+            <section class="inicial" id="filteredBills">
+
+            </section>
+        </div>
+    </main>
+    
+</body>
+</html>

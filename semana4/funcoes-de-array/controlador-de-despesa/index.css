@@ -1,0 +1,43 @@
+#container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start; 
+    height: 300px;
+    width: 95%;
+}
+
+section{
+   align-self: flex-start;
+   border: 1px solid black;
+   font-size: 1em;
+   width: 500px;
+   height: 220px;
+   padding: 0px 15px;
+   height: auto;
+}
+
+h3{
+    font-size: 1.5em;;
+}
+
+#despesas{
+    width: 600px;
+    flex-wrap: wrap;
+    align-self: center;
+    border: solid 1px black;
+}
+
+#container2{
+    display: flex;
+    justify-content: space-evenly;
+    height: auto;
+}
+
+.inicial{
+    height: auto;
+}
+
+.inicial1{
+    height:200px;
+}
