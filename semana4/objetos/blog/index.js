@@ -30,12 +30,3 @@ function createPost() {
     postImage.value = ""
     postContent.value = ""  
 }
-
-function openPage(){
-    for(let i = 0; i < postPublished.length; i++){
-        document.getElementById("postPublished").innerHTML += `Title: ${newPost.title}<br>Author: ${newPost.author}<br><img src="${newPost.image}"><br>Post: ${newPost.post}<br><br>`
-    }
-}
-
-
-

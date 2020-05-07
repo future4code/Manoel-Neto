@@ -17,7 +17,7 @@
         <label for="author">Autor: </label><input type="text" id="author" name="author" placeholder="ex. Manoel Neto"><br>
         <label for="image">Imagem: </label><input type="text" id="image" name="image" placeholder="url da imagem"><br>
         <label for="post">Post: </label><textarea type="text" id="post" name="post" placeholder="Escreva aqui o seu post..."></textarea>
-        <button id="criarPost" onclick="location.href='post.html', createPost()">Criar</button>
+        <button id="criarPost" onsubmit="return false" onclick="location.href='post.html', createPost()">Criar</button>
     </main>
 
     <footer>
