@@ -138,3 +138,15 @@ showAlert("Hello Labenu")
 // Objetos
 // Ex. 1 - Objeto contem informacoes de variaveis, funcoes ou estrutura de dados. Ele guarda a maneira com qual os dados vao se comportar
 // atraves dos atributos a ele dado. O qual podemor guaradar apos em uma array, a qual armazenará um objeto que contem varias informaçoes.
+
+// Ex. 2
+function createRectangle(sideA, sideB){
+    let rectangle ={
+        width: sideA,
+        height: sideB,
+        perimeter: 2*(sideA + sideB),
+        area: (sideA * sideB)
+    }
+
+    return rectangle
+}
