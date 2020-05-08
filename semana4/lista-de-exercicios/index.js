@@ -114,3 +114,17 @@ function compararNumeros(a, b){
         console.log(`A diferença entre eles é: 0`)
     }
 }
+
+//FUNÇÕES
+// Ex. 1
+function arrumarArray(array){
+    array.sort();
+
+    console.log(`O segundo menor valor é: ${array[1]}`)
+    console.log(`O segundo maior valor é: ${array.length - 2}`)
+}
+
+// Ex. 2
+const alert = function(){
+    alert(`Hello Labenu!`)
+}
