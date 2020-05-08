@@ -49,3 +49,10 @@ function logicaUm(){
 }
 
 logicaUm()
+
+// Ex. 2
+// false
+// false
+// true
+// true
+// true
