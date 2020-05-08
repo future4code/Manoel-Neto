@@ -58,6 +58,7 @@ logicaUm()
 // true
 
 // Ex. 3
+// O codigo nao funcionava, pois a constante quantidadeDeNumeroPares nao recebia valor nenhum, implementacao logo abaixo.
 function exibirPares(numero){
     const quantidadeDeNumerosPares = numero
     let i = 0;
@@ -66,3 +67,4 @@ function exibirPares(numero){
         i++
     }
 }
+
