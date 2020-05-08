@@ -12,3 +12,9 @@
 // no caso que precisava a o switch para de rodar gracas ao break que serve para poder parar o codigo de rodar ali. No segundo caso segundoMontante
 // o codigo roda todos os casos, e como nao existe nenhum caso com o nome Tesouro Direto, ele da o brak no default. Retornando  a mensagem que 
 // o tipo de investimento esta incorreto. Entao sao impressos nos console 165 e tipo de investimento incorreto.
+
+// ex.3
+// Sao criadas tres arrays, uma com alguns elementos dentro e outras duas vazias. Depois é rodado um loop o qual checa se cada numero dentro da
+// array povoada é par ou impar e guarda eles numa nova variavel, caso o numero seja par, ele é colocado dentro da array 1, caso seja impar ele
+// é colocado na array 2. No final é impresso no console o tamnho da array original, que é 14. E exibida logo em seguida o tamanho das novas arrays.
+// A array 1 com tamanho igual a 6 e a array 2 com tamanho igual a 8.
