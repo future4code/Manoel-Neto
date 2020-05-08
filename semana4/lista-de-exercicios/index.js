@@ -67,6 +67,7 @@ function exibirPares(numero){
         i++
     }
 }
+exibirPares(5)
 
 // Ex. 4
 function definirTipoTriangulo (a, b, c){
@@ -76,5 +77,40 @@ function definirTipoTriangulo (a, b, c){
         console.log("Este triangulo é isoceles")
     }else{
         console.log("Esse triangulo é escaleno")
+    }
+}
+definirTipoTriangulo(3, 3, 3)
+definirTipoTriangulo(3, 3, 1)
+definirTipoTriangulo(3, 1, 3)
+definirTipoTriangulo(1, 3, 3)
+definirTipoTriangulo(3, 1, 2)
+
+// Ex. 5
+function compararNumeros(a, b){
+    if(a > b){
+        console.log(`O maior é: ${a}`)
+    }else if(b>a){
+        console.log(`O maior é: ${b}`)
+    }else{
+        console.log("Os numeros sao iguais.")
+    }
+
+    if(a%b === 0){
+        console.log(`O numero ${a} é divisiel por ${b}`)
+    }else{
+        console.log(`O numero ${a} não é divisiel por ${b}`)
+    }
+    
+    if(b%a === 0 ){
+        console.log(`O numero ${b} é divisiel por ${a}`)
+    }else{
+        console.log(`O numero ${b} não é divisiel por ${a}`)
+    }
+    if(a-b > 0){
+        console.log(`A diferença entre eles é: ${a-b}`)
+    }else if(b - a > 0){
+        console.log(`A diferença entre eles é: ${b-a}`)
+    }else{
+        console.log(`A diferença entre eles é: 0`)
     }
 }
