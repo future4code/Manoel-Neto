@@ -68,3 +68,13 @@ function exibirPares(numero){
     }
 }
 
+// Ex. 4
+function definirTipoTriangulo (a, b, c){
+    if(a===b && a===c){
+        console.log("Este triangulo é equilatero!")
+    }else if((a===b && a!==c) || (a===c && a !==b) || (b === c && b !==a)){
+        console.log("Este triangulo é isoceles")
+    }else{
+        console.log("Esse triangulo é escaleno")
+    }
+}
