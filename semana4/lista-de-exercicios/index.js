@@ -150,3 +150,21 @@ function createRectangle(sideA, sideB){
 
     return rectangle
 }
+
+// Ex. 3
+function showFavoriteMovie(title, year, director, array){
+    let favMovie = {
+        title: title,
+        year: year,
+        director: director,
+        cast: array
+    }
+
+    let castList = ""
+    for(let i = 0; i < array.length; i++){
+        castList += array[i]+ ", "
+    }
+
+    return `Venha assistir ao filme ${favMovie.title}, de ${favMovie.year}, dirigido por ${favMovie.director} e estrelando ${castList}`
+
+    }
