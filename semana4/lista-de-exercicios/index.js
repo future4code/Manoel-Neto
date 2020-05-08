@@ -117,14 +117,20 @@ function compararNumeros(a, b){
 
 //FUNÇÕES
 // Ex. 1
+function sortFunction(a, b){
+    return (a - b)
+}
 function arrumarArray(array){
-    array.sort();
+    array.sort(sortFunction)
 
     console.log(`O segundo menor valor é: ${array[1]}`)
-    console.log(`O segundo maior valor é: ${array.length - 2}`)
+    console.log(`O segundo maior valor é: ${array[array.length - 2]}`)
 }
 
+arrumarArray([10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 34, 68, 54, 23, 55, 90, 62, 44, 32, 36])
+
 // Ex. 2
-const alert = function(){
-    alert(`Hello Labenu!`)
+let showAlert = function(mensagem) {
+    alert(mensagem)
 }
+showAlert("Hello Labenu")
