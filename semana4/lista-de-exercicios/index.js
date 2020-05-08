@@ -56,3 +56,13 @@ logicaUm()
 // true
 // true
 // true
+
+// Ex. 3
+function exibirPares(numero){
+    const quantidadeDeNumerosPares = numero
+    let i = 0;
+    while(i < quantidadeDeNumerosPares){
+        console.log(i*2)
+        i++
+    }
+}
