@@ -168,3 +168,23 @@ function showFavoriteMovie(title, year, director, array){
     return `Venha assistir ao filme ${favMovie.title}, de ${favMovie.year}, dirigido por ${favMovie.director} e estrelando ${castList}`
 
     }
+
+    // Ex. 4
+
+    let person = {
+        name: 'Manoel',
+        idade: '26',
+        email: 'mneto_004@hotmail.com',
+        endereco: 'Rua 225, s/n - Caçú'
+    }
+
+    function anonimatePerson(person){
+        let hiddenName = {
+            ...person,
+            name: 'Anonimo',
+        }
+
+        return hiddenName
+    }
+
+    console.log(anonimatePerson(person))
