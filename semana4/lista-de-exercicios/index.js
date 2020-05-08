@@ -18,3 +18,11 @@
 // array povoada é par ou impar e guarda eles numa nova variavel, caso o numero seja par, ele é colocado dentro da array 1, caso seja impar ele
 // é colocado na array 2. No final é impresso no console o tamnho da array original, que é 14. E exibida logo em seguida o tamanho das novas arrays.
 // A array 1 com tamanho igual a 6 e a array 2 com tamanho igual a 8.
+
+// ex.4
+// É declarado uma array com alguns elementos dentro, todos numeros. E declarado duas variaveis a de numero 1 com valor infinito e a de numero 2
+// com o valor igual a 0. Após isso é criado um loop que pegar todos os numeros dentro da array e feito duas diferentes comparações dentro de dois
+// diferentes if's. O primeiro diz que se o numero analisado for menor que o numero1 (infinito), esse numero infinito assume o valor desse numero que
+// esta sendo analizado, e assim sucessivamente até chegar no ultimo elemento. O mesmo é feito embaixo porem a condicao de analise é diferente. A qual diz
+// que se o numero analisado for maior que o numero 2 ( que tem como valor 0), esse numero 2 vai assumir o valor daquele numero.
+// As respostas serao -10 e 1590.
