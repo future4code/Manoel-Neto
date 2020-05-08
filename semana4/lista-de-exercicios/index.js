@@ -134,3 +134,7 @@ let showAlert = function(mensagem) {
     alert(mensagem)
 }
 showAlert("Hello Labenu")
+
+// Objetos
+// Ex. 1 - Objeto contem informacoes de variaveis, funcoes ou estrutura de dados. Ele guarda a maneira com qual os dados vao se comportar
+// atraves dos atributos a ele dado. O qual podemor guaradar apos em uma array, a qual armazenará um objeto que contem varias informaçoes.
