@@ -26,3 +26,26 @@
 // esta sendo analizado, e assim sucessivamente até chegar no ultimo elemento. O mesmo é feito embaixo porem a condicao de analise é diferente. A qual diz
 // que se o numero analisado for maior que o numero 2 ( que tem como valor 0), esse numero 2 vai assumir o valor daquele numero.
 // As respostas serao -10 e 1590.
+
+// LÓGICA DE PROGRAMAÇÃO
+// Ex. 1
+function logicaUm(){
+    const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+    for(let i = 0; i < array.length; i++){
+        console.log(array[i])
+    }
+
+    for(let numeros of array){
+        console.log(numeros)
+    }
+
+    let i = 0
+
+    while(i < array.length){
+        console.log(array[i])
+        i++
+    }
+}
+
+logicaUm()
