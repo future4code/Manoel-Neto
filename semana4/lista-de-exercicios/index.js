@@ -188,3 +188,40 @@ function showFavoriteMovie(title, year, director, array){
     }
 
     console.log(anonimatePerson(person))
+
+    // FUNCOES DE ARRAY
+
+    // Ex. 1
+
+    let people = 
+    [
+        { nome: "Pedro", idade: 20 },
+        { nome: "João", idade: 10 },
+        { nome: "Paula", idade: 12 },
+        { nome: "Artur", idade: 89 }
+    ]
+let adults = []
+let children = []
+// a)
+function returnAdults(array){
+    
+    array.forEach((person, index, array)=>{
+        if(person.idade >= 20){
+            adults.push(array[index])
+        }
+    })
+console.log(adults)
+}
+// b)
+function returnChildren(array){
+    array.forEach((person, index, array) => {
+        if(person.idade < 20){
+            children.push(array[index])
+        }
+    })
+    console.log(children)
+}
+
+
+returnAdults(people)
+returnChildren(people)
