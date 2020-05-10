@@ -273,3 +273,33 @@ function evenOdd(array){
 }
 
 multiplyElements(numbers)
+
+// Ex. 3
+
+const people = [
+	{ nome: "Paula", idade: 12, altura: 1.8},
+	{ nome: "João", idade: 20, altura: 1.3},
+	{ nome: "Pedro", idade: 15, altura: 1.9},
+	{ nome: "Luciano", idade: 22, altura: 1.8},
+	{ nome: "Artur", idade: 10, altura: 1.2},
+	{ nome: "Soter", idade: 70, altura: 1.9}
+]
+
+let allowedPeople = []
+let notAllowedPeople = []
+
+function allowRollerCoaster(array){
+    
+    people.forEach((person, index, array) =>{
+        if(person.idade > 14 && person.idade < 60 && person.altura >= 1.5){
+            allowedPeople.push(array[index])
+        }else{
+            notAllowedPeople.push(array[index])
+        }
+    })
+
+    console.log(allowedPeople)
+    console.log(notAllowedPeople)
+}
+
+allowRollerCoaster(people)
