@@ -303,3 +303,36 @@ function allowRollerCoaster(array){
 }
 
 allowRollerCoaster(people)
+
+// Ex. 4
+const appointments = [
+	{ nome: "João", genero: "masculino", cancelada: true, dataDaConsulta: "01/10/2019" },
+	{ nome: "Pedro", genero: "masculino", cancelada: false, dataDaConsulta: "02/10/2019" },
+	{ nome: "Paula", genero: "feminino", cancelada: true, dataDaConsulta: "03/11/2019" },
+	{ nome: "Márcia", genero: "feminino", cancelada: false, dataDaConsulta: "04/11/2019" }
+]
+
+let emailsArray =[]
+
+function appointmentEmails(array){
+
+    appointments.forEach((appointment, index, array) => {
+        if(appointment.cancelada === false){
+            if(appointment.genero === "masculino"){
+                emailsArray.push(`Olá, Sr. ${appointment.nome}. Estamos enviando esta mensagem para lembrá-lo da sua consulta no dia ${appointment.dataDaConsulta}. Por favor, acuse o recebimento deste e-mail.`)
+            }else{
+                emailsArray.push(`Olá, Sra. ${appointment.nome}. Estamos enviando esta mensagem para lembrá-lo da sua consulta no dia ${appointment.dataDaConsulta}. Por favor, acuse o recebimento deste e-mail.`)
+            }
+        }else{
+            if(appointment.genero === "masculino"){
+                emailsArray.push(`Olá, Sr. ${appointment.nome}. Infelizmente, sua consulta marcada para o dia ${appointment.dataDaConsulta} foi cancelada. Se quiser, pode entrar em contato conosco para remarcá-la`)
+            }else{
+                emailsArray.push(`Olá, Sra. ${appointment.nome}. Infelizmente, sua consulta marcada para o dia ${appointment.dataDaConsulta} foi cancelada. Se quiser, pode entrar em contato conosco para remarcá-la`)
+            }
+        }
+    })
+
+    console.log(emailsArray)
+}
+
+appointmentEmails(appointments)
