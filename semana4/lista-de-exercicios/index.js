@@ -225,3 +225,22 @@ function returnChildren(array){
 
 returnAdults(people)
 returnChildren(people)
+
+// Ex. 2
+// a)
+const numbers = [1, 2, 3, 4, 5, 6]
+
+let mutipliedArray = []
+
+function multiplyElements(array){
+    array.forEach((number, index, array) => {
+        array[index] = array[index] * 2
+
+        mutipliedArray.push(array[index])
+    })
+    console.log(multipliedArray)
+}
+
+multiplyElements(numbers)
+
+// b)
