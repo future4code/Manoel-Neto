@@ -230,17 +230,46 @@ returnChildren(people)
 // a)
 const numbers = [1, 2, 3, 4, 5, 6]
 
-let mutipliedArray = []
+let doubleArray = []
 
 function multiplyElements(array){
     array.forEach((number, index, array) => {
         array[index] = array[index] * 2
 
-        mutipliedArray.push(array[index])
+        doubleArray.push(array[index])
     })
-    console.log(multipliedArray)
+    console.log(doubleArray)
 }
 
 multiplyElements(numbers)
 
 // b)
+
+let tripleArray = []
+
+function multiplyElements(array){
+    array.forEach((number, index, array) => {
+        array[index] = array[index] * 3
+
+        tripleArray.push(array[index].toString())
+    })
+    console.log(tripleArray)
+}
+
+multiplyElements(numbers)
+
+// c)
+let evenOdd = []
+
+function evenOdd(array){
+    array.forEach((number, index, array) => {
+        if(array[index]%2 === 0){
+            evenOdd.push(`${array[index]} é par`)
+        }else{
+            evenOdd.push(`${array[index]} é impar`)
+        }
+    })
+    console.log(evenOdd)
+}
+
+multiplyElements(numbers)
