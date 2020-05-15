@@ -24,10 +24,13 @@ function App() {
       <div className="page-section-container">
         <CardPequeno
           imagem="https://cdn4.iconfinder.com/data/icons/aiga-symbol-signs/439/aiga_mail-512.png"
-          descricao="Email: mneto_004@hotmail.com" />
+          descricao="Email: mneto_004@hotmail.com" 
+          />
+
           <CardPequeno
           imagem="https://image.flaticon.com/icons/svg/1239/1239525.svg"
-          descricao="Endereço: Rua Pau Brasil, 435" />
+          descricao="Endereço: Rua Pau Brasil, 435" 
+          />
       </div>
 
       <div className="page-section-container">
