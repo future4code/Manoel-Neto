@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { Registration } from './components/Register/RegisterUser';
 import { List } from './components/List/Userlist';
+import { UserDetails } from './components/UserDetails/UserDetails';
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
@@ -18,7 +19,7 @@ const ButtonBar = styled.div`
   align-items: center;
   justify-content: center;
 `
-const PricipalButton = styled.button`
+const PrincipalButton = styled.button`
   border: 1px solid white;
   background: grey;
   color: white;
@@ -30,9 +31,6 @@ const PricipalButton = styled.button`
   }
 
 `
-
-
-
 
 class App extends React.Component {
   
@@ -46,15 +44,27 @@ class App extends React.Component {
         return <Registration />;
       
       case 'list':
-        return <List />
+        return <List changePage={() => this.handleUserDetails('userInfo')} />
       
       default: 
         return <Registration />
     }
   }
 
-  viewList = () => {
+  handleUserDetails = (newPage) => {
+    this.setState({
+      page: newPage
+    })
+  }
+
+  changePage = () => {
     (this.state.page === 'register') ? this.setState({page: 'list'}) : this.setState({page: 'register'})
+  }
+
+  returnPage = () => {
+    this.setState({
+      page: 'list'
+    })
   }
 
   render(){ 
@@ -64,7 +74,8 @@ class App extends React.Component {
   return (
     <Wrapper>
       <ButtonBar>
-        <PricipalButton onClick={this.viewList}>{viewedText}</PricipalButton>
+        <PrincipalButton onClick={this.changePage}>{viewedText}</PrincipalButton>
+        {this.state.page === 'userInfo' && <PrincipalButton onClick={this.returnPage}>Voltar</PrincipalButton>}
       </ButtonBar>
       {this.renderPage()}
     </Wrapper>

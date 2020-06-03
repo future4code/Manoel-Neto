@@ -77,13 +77,13 @@ export class Registration  extends React.Component {
                 Authorization: 'manoel-queiroz-neto-mello'
             }
         }).then((response) => {
-            window.alert('Dados enviados com sucesso!')
+            window.alert(`Usuário ${this.state.nameValue} criado com sucesso!`)
             this.setState({
                 nameValue: '',
                 emailValue: ''
             })
         }).catch((e) => {
-            window.alert('Houve um erro ao enviar os dados.')
+            window.alert('Houve um erro ao enviar os dados.' + e)
             this.setState({
                 nameValue: '',
                 emailValue: ''

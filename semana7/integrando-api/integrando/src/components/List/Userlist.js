@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
+import { UserDetails } from '../UserDetails/UserDetails'
 
 const WrapAll = styled.div`
     display: flex;
@@ -27,29 +28,27 @@ const DeleteButton = styled.button`
         color: red;
     }
 `
-
+const axiosConfig = {
+    headers: {
+        Authorization: 'manoel-queiroz-neto-mello'
+    }
+}
 
 export class List  extends React.Component {
 
     state = {
-        users: []
+        users: [],
+        id: '',
+        name: ''
     }
      
     componentDidMount () {
         this.getData()
     }
 
-    componentDidUpdate(){
-        this.getData()
-    }
-
     getData = () => {
     
-        axios.get('https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users', {
-            headers: {
-                Authorization: 'manoel-queiroz-neto-mello'
-            }
-        }).then((response) => {
+        axios.get('https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users', axiosConfig ).then((response) => {
             this.setState({users: response.data})
         }).catch((e) => {
             this.setState({errorMessage: 'Ocorreu um erro!'})
@@ -57,30 +56,41 @@ export class List  extends React.Component {
     }
 
     deleteUser = userId => {
-        axios.delete('https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/'+`${userId}`, {
-            headers: {
-                Authorization: 'manoel-queiroz-neto-mello'
-            }
-        }).then((response)=> {
-            window.alert('Deletado com sucesso!')
+        axios.delete(`https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${userId}`, axiosConfig).then((response)=> {
+            window.alert('Usuario deletado com sucesso.')
+            this.getData();
         }).catch((e) => {
-            window.alert('Houve um erro ao deletar o usuário.')
+            window.alert('Houve um erro ao deletar o usuário.' + e)
         })
 
+    }
+
+    confirmDelete = (id, userName) => {
+        const confirmMessage = window.confirm('Tem certeza que quer deletar o usuário '+ userName+'?\n') 
+        confirmMessage ? this.deleteUser(id) : alert('Usuário não foi deletado')
+    }
+
+    handleUserId = (userInfoId, userInfoName) => {
+        this.setState({
+            id: userInfoId,
+            name: userInfoName
+        })
     }
     
     render(){
         
         const users = this.state.users.map(user => {
-            return (
-            <NamesDiv>
-                <p key={user.id}>{user.name}</p> <DeleteButton onClick={() => this.deleteUser(user.id)}>X</DeleteButton>
+                return(
+            <NamesDiv  key={user.id} >
+                <p onClick={() => this.handleUserId(user.id, user.name)}>{user.name}</p> <DeleteButton onClick={() => this.confirmDelete(user.id, user.name)}>X</DeleteButton>
             </NamesDiv>
-            )
+                )   
         })
+
         return(
             <WrapAll>
-                {users}
+                {this.state.users.length === 0 && <div>Carregando...</div>}
+                {this.state.id ==='' ? users : <UserDetails key={users.id} getUserId={this.state.id} deleteUser={() => this.confirmDelete(this.state.id, this.state.name)} />}
             </WrapAll>
         )
     }
