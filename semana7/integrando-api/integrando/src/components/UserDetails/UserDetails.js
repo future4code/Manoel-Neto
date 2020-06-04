@@ -61,14 +61,16 @@ export class UserDetails  extends React.Component {
     render(){
         
         const user = this.state.users
+
+        const details = <NamesDiv>
+                            <Details>{user.name}</Details> <Details>{user.email}</Details><DeleteButton onClick={this.props.deleteUser}>x</DeleteButton>
+                        </NamesDiv>
         
 
         return(
             <WrapAll>
-                {this.state.users.length === 0 ? <div>Carregando...</div> :
-                <NamesDiv>
-                    <Details>{user.name}</Details> <Details>{user.email}</Details><DeleteButton onClick={this.props.deleteUser}>x</DeleteButton>
-                </NamesDiv>}
+                {this.state.users.length === 0 ? <div>Carregando...</div> : { details} }
+                
             </WrapAll>
         )
     }
