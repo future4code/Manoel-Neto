@@ -21,3 +21,17 @@ export const SelectionMenu = styled.select`
     color: white;
     font-size: 12px;
 `
+
+export const InputCep = styled.input`
+    width: 200px;
+    padding: 5px 5px;
+    color: white;
+    background: #7303fc;
+    border: none;
+    outline: none;
+`
+
+export const Search = styled.button`
+    background: white;
+    margin: 5px 0px;
+`

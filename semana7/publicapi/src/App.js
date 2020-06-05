@@ -1,47 +1,56 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { WrapAll, PageContainer, MainTitle, SelectionMenu  } from './Styled'
-
+import React from 'react'
+import { WrapAll, ButtonChange, ButtonDiv } from './Styled'
+import { MainPage } from './components/MainPage/MainPage'
+import { Postcode } from './components/Postcode/Postcode'
+import { HarryPotter } from './components/HarryPotter/HarryPotter'
 
 class App extends React.Component {
+  state = {
+    page: "inicial"
+  }
 
-  state={
-    page: 0
+  onClickHarry = () => {
+    this.setState({
+      page: "harry"
+    })
+    console.log("funcionou")
+  }
+
+  onClickPostal = () => {
+    this.setState({
+      page: "postal"
+    })
+    console.log("funcionou")
+  }
+
+  onClickInicial = () => {
+    this.setState({
+      page: 'inicial'
+    })
   }
 
   renderPage = () => {
     switch(this.state.page){
-      case 1: 
-        return <p>olá</p>
+      case "harry":
+        return <HarryPotter />
       
-      case 2:
-        return <p>fudeu</p>
-      
-      default:
-        return {}
+      case "postal":
+        return <Postcode />
+
+      default: 
+        return <MainPage changeHarry={this.onClickHarry} changePostal={this.onClickPostal} />
     }
   }
 
-  handlePageNumber = event => {
-    this.setState({
-      page: event.target.value
-    })
-    
-  }
-
-
-  
-
-  render(){
-    const renderPage = this.state.page === 0 ? "puta" : "falsa"
+  render () {
 
     return (
       <WrapAll>
-        {renderPage}
+        {this.renderPage()}
+        {this.state.page !== 'inicial' && <ButtonDiv><ButtonChange onClick={this.onClickInicial}>Voltar</ButtonChange></ButtonDiv>}
       </WrapAll>
-    );
+    )
+    }
   }
-}
 
 export default App;
