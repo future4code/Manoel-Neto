@@ -7,7 +7,7 @@ export const CreateContainer = styled.div`
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 250px;
+    min-height: 200px;
 `
 export const CreateTitle = styled.h3`
     color: #fc8003;
@@ -27,6 +27,7 @@ export const PlaylistInput = styled.input`
 `
 export const CreateButton = styled.button`
     background: #fc8003;
+    margin: 10px;
     color: white;
     outline: none;
     border: none;
@@ -36,4 +37,21 @@ export const CreateButton = styled.button`
     :hover {
         background:#ffaf5e
     }
+`
+export const Check = styled.span`
+    color: ${props =>{
+        if(props.color === 'green'){
+            return 'green'
+        } else {
+            return 'red'
+        }
+    }};
+    
+    margin: 5px 0;
+    align-self: flex-end;
+`
+export const CheckContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 `

@@ -7,23 +7,35 @@ import { Playlists } from './components/Playlists/Playlists';
 import axios from 'axios'
 
 
+const axiosConfig = {
+  headers: {
+      Authorization: 'manoel-queiroz-neto-mello'
+  }
+}
+
 class App extends React.Component {
 
   state= {
-    page: "create",
-    playlists: []
+    page: 'home',
+    playlists: [],
+    detailedPlaylist: []
   }
 
   renderPage = () => {
     switch(this.state.page){
       case 'list':
-        return <Playlists playlistOnList={this.state.playlists} />
+        return <Playlists playlistOnList={this.state.playlists} 
+                          deletePlaylist={this.confirmDelete}
+                          getDetails={this.getPlayListDetails}
+                          detailedState={this.state.detailedPlaylist}
+                          deleteSong={this.deleteSong}
+                />
       
       case 'music':
         return
 
       default: 
-      return <CreatePlaylist />
+      return <CreatePlaylist checkName={this.state.playlists} />
     }
   }
 
@@ -33,25 +45,61 @@ class App extends React.Component {
     })
   }
 
+  onClickHome = () => {
+    this.setState({
+      page: 'home'
+    })
+  }
+
   componentDidMount() {
     this.getPlaylists()
-}
+  }
+
+  componentDidUpdate() {
+    this.getPlaylists()
+  }
 
 getPlaylists = () => {
-    const axioConfig = {
-        headers: {
-            Authorization: 'manoel-queiroz-neto-mello'
-        }
-    }
-
-    axios.get('https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists', axioConfig).then((response) => {
+    axios.get('https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists', axiosConfig).then((response) => {
         this.setState({
           playlists: response.data.result.list
         })
-        console.log(response.data.result.list)
     }).catch((e) =>{
-        window.alert('Ocorreu um erro ao enviar os dados.')
+        window.alert('Ocorreu um erro ao enviar os dados.' + e)
     })
+}
+
+deletePlaylist = playlistId => {
+  axios.delete(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${playlistId}`, axiosConfig).then((response) => {
+      window.alert('PlayList deletado com sucesso!')
+      this.getPlaylists()
+  }).catch((e) => {
+      window.alert('Houve um erro ao deletar o playlist.' + e)
+  })
+}
+
+getPlayListDetails = detailsId => {
+  axios.get(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${detailsId}/tracks`, axiosConfig).then((response) => {
+    this.setState({
+      detailedPlaylist: response.data.result.tracks
+    })
+  }).catch((e) => {
+    window.alert('Houve um erro inesperado!')
+  })
+}
+
+deleteSong = (playlistId, songId) => {
+  axios.delete(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${playlistId}/tracks/${songId}`, axiosConfig).then((response) => {
+    window.alert('Música excluida com sucesso.')
+    this.getPlayListDetails(playlistId)
+  }).catch((e) => {
+    window.alert('Houve um erro ao deletar sua música!')
+  })
+}
+
+confirmDelete = (id, name) => {
+  const confirmMessage = window.confirm(`Tem certeza que deseja excluir a playlist: ${name} ?`)
+  confirmMessage ? this.deletePlaylist(id) : alert('Playlist nao foi deleteda!')
 }
 
   render() {
@@ -61,7 +109,7 @@ getPlaylists = () => {
 
           <LogoContainer>
               <LogoSubContainer>
-              <Title>Labefy</Title>
+              <Title onClick={this.onClickHome}>Labefy</Title>
               </LogoSubContainer>
               <LogoSubContainer>
                   <Moto>| Feitos de música, pela música.</Moto>
@@ -70,9 +118,8 @@ getPlaylists = () => {
 
           <MenuContainer>
               <MenuList>
-                  <MenuItem id="create">Criar Playlist</MenuItem>
+                  <MenuItem id="create" onClick={this.onClickHome}>Criar Playlist</MenuItem>
                   <MenuItem id="list" onClick={this.onClickPlaylists} >Playlists</MenuItem>
-                  <MenuItem id="addMusic">Add Música</MenuItem>
               </MenuList>
           </MenuContainer>
 
