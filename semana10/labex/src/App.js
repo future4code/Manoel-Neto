@@ -1,25 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { AppContainer } from './Styled'
+import { NavBar } from './components/NavBar/NavBar';
+import { Footer } from './components/Footer/Footer';
+import {MuiThemeProvider, createMuiTheme} from '@material-ui/core'
+import { Routes } from './components/Routes/Routes'
+import { useLocation } from 'react-router-dom'
+
 
 function App() {
+
+  const currentLocation = Routes().useLocation()
+
+  const theme = createMuiTheme({
+    palette: {
+      primary: {
+        main: '#FFFFFF'
+      },
+      secondary: {
+        main: '#557a95'
+      }
+    }
+  })
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MuiThemeProvider theme={theme}>
+      <AppContainer>
+
+        <NavBar />
+        {Routes()}
+        {currentLocation !== '/' &&
+        <Footer />} 
+
+      </AppContainer>
+    </MuiThemeProvider>
   );
 }
 
