@@ -1,7 +1,7 @@
 import React from 'react'
 import { MainContainer, OptionContainer, WelcomeContainer, OptionCard } from './Styled'
 import { Typography } from '@material-ui/core'
-import { useHistory, useLocation } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 
 export function HomePage() {
@@ -13,7 +13,7 @@ export function HomePage() {
     }
     
     const goToTripsList = () => {
-        history.push('/trips')
+        history.push('/trips/list')
     }
 
     return(
