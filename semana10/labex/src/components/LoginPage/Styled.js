@@ -1,20 +1,6 @@
 import styled from 'styled-components'
 import { FormControl } from '@material-ui/core'
 
-export const LoginContainer = styled.div`
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 8px;
-`
-
-export const Title = styled.div`
-    height: auto;
-    padding: 32px;
-`
-
 export const DataContainer = styled(FormControl)`
     width: 400px;
     height: 300px;

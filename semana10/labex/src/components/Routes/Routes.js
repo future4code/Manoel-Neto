@@ -1,26 +1,24 @@
 import React from 'react'
-import { BrowserRouter, Switch, Route, useHistory, useLocation} from 'react-router-dom'
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 
 import { LoginPage } from '../LoginPage/LoginPage'
 import { HomePage } from '../HomePage/HomePage'
 import { TripsGridPage } from '../TripsGridPage/TripsGridPage'
-import { TripsDetails } from '../TripDetailsPage/TripDetailsPage'
-import { CreateTrip } from '../CreateTripPage/CreateTripPage'
+import { ApplyPage } from '../ApplyPage/ApplyPage'
+import { CreateTripPage } from '../CreateTripPage/CreateTripPage'
 import { AdminPage } from '../AdminPage/AdminPage'
+import { TripsDetailsPage } from '../TripDetailsPage/TripDetailsPage'
 
+function PrivateRoute({component: Component, ...rest}) {
 
-export const Routes = (useLocation) => {
+    const token = window.localStorage.getItem('token')
 
-    const history = useHistory()
-    const location = useLocation
+    const returnedComponent = token === null  ? <Redirect to={{pathname: '/'}} /> : <Route {...rest}><Component /></Route>
 
-    const goBack = () => {
+    return returnedComponent
+}
 
-        if(location === '/adm'){
-            history.replace('/')
-        }
-        history.goBack()
-    }
+export const Routes = () => {
 
     return(
         <BrowserRouter>
@@ -28,26 +26,26 @@ export const Routes = (useLocation) => {
             <Route exact path='/'>
                 <HomePage />
             </Route>
+
             <Route exact path='/login'>
                 <LoginPage />
             </Route>
+            
             <Route exact path='/trips/list'>
                 <TripsGridPage />
             </Route>
-            <Route exact path='/trips/details/:id'>
-                <TripsDetails />
+
+            <Route exact path='/trips/:tripId/apply'>
+                <ApplyPage />
             </Route>
-            <Route exact path='/trips/create/'>
-                <CreateTrip />
-            </Route>
-            <Route exact path='/adm'>
-                <AdminPage />
-            </Route>
-            <Route exact path='/trips/subscribed'>
-            </Route>
-            <Route exact path='/trips/subscribed/details/:id'>
-            </Route>
-            <Route path='404'>
+
+            <PrivateRoute exact path='/trips/create' component={CreateTripPage} />
+
+            <PrivateRoute exact path='/adm' component={AdminPage} />
+
+            <PrivateRoute exact path='/trips/details/:tripId' component={TripsDetailsPage} />
+
+            <Route path='/404'>
             </Route>
         </Switch>
     </BrowserRouter>

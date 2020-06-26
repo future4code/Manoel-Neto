@@ -1,20 +1,16 @@
 import React from 'react'
-import { useToken } from '../Hooks/CustomHooks'
 import { useHistory } from 'react-router-dom'
-import { Container, ActionContainer, GreetingContainer, ActionCard } from './Styled'
+import { ActionContainer, GreetingContainer, ActionCard } from './Styled'
 import { Typography, Button } from '@material-ui/core'
+import { MainContainer } from '../../Styled'
 
 export function AdminPage() {
 
     const history = useHistory()
 
-    useToken()
-
-    const name = JSON.parse(localStorage.getItem('info'))[0].email
-
     const clear = () => {
-        localStorage.removeItem('info')
-        history.push('/login')
+        localStorage.removeItem('token')
+        history.replace('/login')
     }
 
     const goToCreatePage = () => {
@@ -30,9 +26,9 @@ export function AdminPage() {
     }
 
     return(
-        <Container>
+        <MainContainer>
             <GreetingContainer>
-                <Typography>Bem vindo, {name}  </Typography>
+                <Typography>Bem vindo,</Typography>
                 <Button variant='contained' color='secondary' size='medium' onClick={clear}>Logout</Button>
             </GreetingContainer>
 
@@ -48,6 +44,6 @@ export function AdminPage() {
                 </ActionCard>
             </ActionContainer>
 
-        </Container>
+        </MainContainer>
     )
 }

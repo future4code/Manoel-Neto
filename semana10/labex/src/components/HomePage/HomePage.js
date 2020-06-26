@@ -1,7 +1,8 @@
 import React from 'react'
-import { MainContainer, OptionContainer, WelcomeContainer, OptionCard } from './Styled'
+import { OptionContainer, OptionCard } from './Styled'
 import { Typography } from '@material-ui/core'
 import { useHistory } from 'react-router-dom'
+import { MainContainer, Title } from '../../Styled'
 
 
 export function HomePage() {
@@ -18,10 +19,10 @@ export function HomePage() {
 
     return(
         <MainContainer>
-            <WelcomeContainer>
-                <Typography variant='h3' color='secondary'>Bem vindx à missão Labex!</Typography>
-                <Typography variant='h5' align='center' color='secondary'>Estamos muitos felizes em te você com a gente, por favor, escolha o perfil em que voce melhor se encaixa.</Typography>
-            </WelcomeContainer>
+            <Title>
+                <Typography variant='h3' color='secondary' >Bem vindx à missão Labex!</Typography>
+                <Typography variant='h5' color='secondary'>Estamos muitos felizes em te você com a gente, por favor, escolha o perfil em que voce melhor se encaixa.</Typography>
+            </Title>
 
             <OptionContainer>
                 

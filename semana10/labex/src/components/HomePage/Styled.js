@@ -1,21 +1,5 @@
 import styled from 'styled-components'
 
-export const MainContainer = styled.div`
-    width: 100vw;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-`
-
-export const WelcomeContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 32px;
-    width: 625px;
-`
-
 export const OptionContainer = styled.div`
     width: 90%;
     align-self: center;
@@ -23,6 +7,14 @@ export const OptionContainer = styled.div`
     flex: 1;
     justify-content: space-around;
     align-items: center;
+
+    @media (min-width: 421px) and (max-width: 800px) {
+        flex-direction: column;
+    }
+
+    @media (min-width: 320px) and (max-width: 420px) {
+        flex-direction: column;
+    }
 `
 
 
@@ -45,5 +37,12 @@ export const OptionCard = styled.div`
         transition: transform 500ms ease-in-out;
     }
 
+    @media (min-width: 421px) and (max-width: 800px) {
+        height: 120px;
+    }
+
+    @media (min-width: 320px) and (max-width: 420px) {
+        height: 100px;
+    }
 `
 

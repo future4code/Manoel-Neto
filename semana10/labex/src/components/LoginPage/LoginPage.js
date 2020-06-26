@@ -1,16 +1,23 @@
-import React, { useState } from 'react'
-import { LoginContainer, DataContainer, SingleField, PassworForgotten, Title, ContainerAll } from './Styled'
+import React, { useState, useEffect } from 'react'
+import { DataContainer, SingleField, PassworForgotten } from './Styled'
 import { Button, TextField, Typography , IconButton, OutlinedInput } from '@material-ui/core'
 import { Visibility, VisibilityOff } from '@material-ui/icons'
 import { handleLogin } from '../API/API'
 import { useHistory } from 'react-router-dom'
-import { componentDidMount } from '../Hooks/CustomHooks'
+import { MainContainer, Title, ButtonContainer } from '../../Styled'
+import { BackButton } from '../../BackButton'
 
 export function LoginPage(){
 
     const history = useHistory()
 
-    componentDidMount('Login')
+    useEffect(() => {
+        
+        const token = window.localStorage.getItem('token')
+        if(token !== null ){
+            history.replace('/adm')
+        }
+    }, [history])
 
     const [ email, setMail ] = useState('')
     const [ password, setPassword ] = useState('')
@@ -23,11 +30,14 @@ export function LoginPage(){
     }
 
     return(
-        <LoginContainer>
+        <MainContainer>
+            <ButtonContainer>
+                <BackButton />
+            </ButtonContainer>
             <Title>
                 <Typography variant='h4' color='secondary'>Faça o Login</Typography>
             </Title>
-            
+
             <DataContainer>
                 <SingleField>
                     <Typography color='secondary' style={{padding: '8px 0'}}>Email</Typography>
@@ -60,6 +70,6 @@ export function LoginPage(){
                 </SingleField>
             </DataContainer>
 
-        </LoginContainer>
+        </MainContainer>
     )
 }

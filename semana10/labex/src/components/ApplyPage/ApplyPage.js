@@ -4,27 +4,30 @@ import {Typography,
         Select, 
         MenuItem, 
         Button } from '@material-ui/core'
-import { useHistory } from 'react-router-dom'
-import { createTrip } from '../API/API'
+import { useHistory, useParams } from 'react-router-dom'
+import { applyToTrip } from '../API/API'
 import { useForm } from '../Hooks/Hooks'
+import { countries  } from './Countries'
 import { MainContainer, Title, FormContainer, FormItem, ButtonContainer, ActionContainer } from '../../Styled'
 import { BackButton } from '../../BackButton'
 
 
 
-export function CreateTripPage() {
+export function ApplyPage() {
 
     const history = useHistory()
 
-    const planets = ['Mercúrio', 'Vênus', 'Terra', 'Marte', 'Júpiter', 'Saturno', 'Urano', 'Netuno']
-
     const { form, onChange, clear } = useForm({
-        tripName: '',
-        planet: '',
-        date: '',
-        description: '',
-        durationInDays: ''
+        name: '',
+        age: '',
+        reason: '',
+        profession: '',
+        country: '',
+        tripId: ''
     })
+
+    const { tripId } = useParams()
+    console.log(tripId)
 
     const handleInputChange = event => {
         const { name, value } = event.target
@@ -36,23 +39,24 @@ export function CreateTripPage() {
         clear()
     }
 
+    const body = {
+        name: form.name,
+        age: form.age,
+        applicationText: form.reason,
+        profession: form.profession,
+        country: form.country
+    }
+
+    const id = window.localStorage.getItem('idTrip')
+
     const isValid = () => {
-        if((form.tripName.length >= 5) && (form.planet !== '-') && (form.description.length >= 30) && (form.duration >= 50)){
-            createTrip('trips', history, body)
+        if((form.name.length >= 3) && (form.age >= 18) && (form.reason.length >= 30) && 
+        (form.profession.length >= 10) && (form.country !== '-')){
+            applyToTrip(id, history, body)
         } else {
             alert('Preencha corretamente')   
         }
     }
-
-    const body = {
-        name: form.tripName,
-        planet: form.planet,
-        date: form.date,
-        description: form.description,
-        durationInDays: form.duration
-    }
-
-    
 
     return(
         <MainContainer>
@@ -60,82 +64,26 @@ export function CreateTripPage() {
                 <BackButton />
             </ButtonContainer>
             <Title>
-                <Typography color='secondary' variant='h3'>Cadastrar nova aventrua!</Typography>
+                <Typography color='secondary' variant='h3'>Formulário de inscrição</Typography>
             </Title>
             <FormContainer>
                 <FormItem>
+
                     <Typography
                         variant='body1' 
                         color='secondary'
-                    >Título da viagem</Typography>
+                    >Nome</Typography>
                     <TextField 
                         variant='outlined' 
-                        name='tripName'
+                        name='name'
                         color='secondary'
-                        value={form.tripName} 
+                        value={form.name} 
                         onChange={handleInputChange}
                         required
                         type='text'
-                        inputProps={{pattern: '[a-zA-Z]{5,}'}}
-                        error ={(form.tripName && form.tripName.length < 5) ? true : false}
-                        helperText={form.tripName && form.tripName.length < 5 && 'O titulo deve ter pelo menos 5 caracteres' }
-                    />
-                </FormItem>
-
-                <FormItem>
-                    <Typography
-                        variant='body1' 
-                        color='secondary'
-                    >Planeta de destino </Typography>
-
-                    <Select
-                        variant='outlined'
-                        color='secondary'
-                        onChange={handleInputChange}
-                        value={form.planet}
-                        name='planet'
-                        required
-                        error ={(form.planet && form.planet === '-') ? true : false}
-                    >   
-                        <MenuItem value='-'>----------------</MenuItem>
-                        {planets && planets.map(planet => {
-                        return <MenuItem key={planet} value={planet}>{planet}</MenuItem>
-                        })}
-                    </Select>
-                </FormItem>
-                
-                <FormItem>
-                    <Typography
-                        variant='body1' 
-                        color='secondary'
-                    >Data </Typography>
-                    <TextField 
-                        variant='outlined' 
-                        name='date'
-                        color='secondary'
-                        value={form.date} 
-                        onChange={handleInputChange}
-                        required
-                        type='date'
-                    />
-                </FormItem>
-
-                <FormItem>
-                    <Typography
-                        variant='body1' 
-                        color='secondary'
-                    >Descrição </Typography>
-                    <TextField 
-                        variant='outlined' 
-                        name='description'
-                        color='secondary'
-                        value={form.description} 
-                        onChange={handleInputChange}
-                        required
-                        inputProps={{ pattern: "[a-zA-z]{30,}" }}
-                        type='text'
-                        error ={(form.description && form.description.length < 30) ? true : false}
-                        helperText={form.description && form.description.length < 30 && 'A descrição deve ter pelo menos 30 caracteres' }
+                        inputProps={{pattern: '[a-zA-Z]{3,}'}}
+                        error ={(form.name && form.name.length < 3) ? true : false}
+                        helperText={form.name && form.name.length < 3 && 'O nome deve ter pelo menos 3 caracteres' }
                     />
                 </FormItem>
 
@@ -144,19 +92,79 @@ export function CreateTripPage() {
                     <Typography
                         variant='body1' 
                         color='secondary'
-                    >Duração</Typography>
+                    >Idade</Typography>
                     <TextField 
                         variant='outlined' 
-                        name='duration'
+                        name='age'
                         color='secondary'
-                        value={form.duration} 
+                        value={form.age} 
                         onChange={handleInputChange}
                         required
-                        inputProps={{min: 50}}
+                        inputProps={{min: 18}}
                         type='number'
-                        error ={(form.duration && form.duration < 50) ? true : false}
-                        helperText={form.duration && form.duration < 50 && 'No minimo 50 dias.' }
+                        error ={(form.age && form.age < 18) ? true : false}
+                        helperText={form.age && form.age < 18 && 'O candidato deve ser maior de 18.' }
                     />
+                </FormItem>
+
+                <FormItem>
+                    <Typography
+                        variant='body1' 
+                        color='secondary'
+                    >Por que voce quer viajar </Typography>
+                    <TextField 
+                        variant='outlined' 
+                        name='reason'
+                        color='secondary'
+                        value={form.reason} 
+                        onChange={handleInputChange}
+                        required
+                        inputProps={{ pattern: "[a-zA-z]{30,}" }}
+                        type='text'
+                        error ={(form.reason && form.reason.length < 30) ? true : false}
+                        helperText={form.reason && form.reason.length < 30 && 'O motivo deve ter pelo menos 30 caracteres' }
+                    />
+                </FormItem>
+
+                <FormItem>
+                    <Typography
+                        variant='body1' 
+                        color='secondary'
+                    >Profissão </Typography>
+                    <TextField 
+                        variant='outlined' 
+                        name='profession'
+                        color='secondary'
+                        value={form.profession} 
+                        onChange={handleInputChange}
+                        required
+                        inputProps={{ pattern: "[a-zA-z]{10,}" }}
+                        type='text'
+                        error ={(form.profession && form.profession.length < 10) ? true : false}
+                        helperText={form.profession && form.profession.length < 10 && 'A profissão deve ter pelo menos 10 caracteres' }
+                    />
+                </FormItem>
+
+                <FormItem>
+                    <Typography
+                        variant='body1' 
+                        color='secondary'
+                    >País de residência </Typography>
+
+                    <Select
+                        variant='outlined'
+                        color='secondary'
+                        onChange={handleInputChange}
+                        value={form.country}
+                        name='country'
+                        required
+                        error ={(form.country && form.country === '-') ? true : false}
+                    >   
+                        <MenuItem value='-'>----------------</MenuItem>
+                        {countries && countries.map(country => {
+                        return <MenuItem key={country.ordem} value={country.nome}>{country.nome}</MenuItem>
+                        })}
+                    </Select>
                 </FormItem>
 
                 <ActionContainer>
@@ -166,7 +174,7 @@ export function CreateTripPage() {
                         type='reset' 
                         style={{width: '100px', right: '8px'}}
                         onClick={reset}
-                    >limpar</Button>
+                    >Limpar</Button>
 
                     <Button 
                         size='medium' 
@@ -174,7 +182,7 @@ export function CreateTripPage() {
                         variant='contained' 
                         style={{width: '100px'}}
                         onClick={() => isValid()}
-                    >Criar</Button>
+                    >Inscrever</Button>
                 </ActionContainer>
             </FormContainer>
         </MainContainer>
