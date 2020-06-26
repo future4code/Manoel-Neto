@@ -1,14 +1,14 @@
 import React from 'react'
-import { Button, Typography } from '@material-ui/core'
 import { CandidateItem, InfoItem, SingleInfo, DecisionContainer } from './Styled'
 import { CheckCircle, Cancel } from '@material-ui/icons'
 import { makeDecision } from '../API/API'
+import { useParams } from 'react-router'
 
 export function CandidatesCard(props){
 
     const candidate = props.info
 
-    const tripId = window.localStorage.getItem('tripId')
+    const { tripId } = useParams()
 
     return(
         <CandidateItem>
@@ -28,6 +28,7 @@ export function CandidatesCard(props){
             {candidate.applicationText}
             </InfoItem>
             <InfoItem>
+                
                 <DecisionContainer>
                     <CheckCircle fontSize='large' color='secondary' onClick={() => makeDecision(tripId, candidate.id, true)} />
                     <Cancel fontSize='large' style={{ color: '#FF0000' }} onClick={() => makeDecision(tripId, candidate.id, false)} />

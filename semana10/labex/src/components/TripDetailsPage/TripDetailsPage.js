@@ -39,7 +39,7 @@ export function TripsDetailsPage(props){
             </Status>
             <CandidateContainer>
                 {trip.approved && trip.approved.map(candidate => {
-                    return <CandidatesCard key={candidate.id} info={candidate} />
+                    return <CandidatesCard key={candidate.id} info={candidate} trip={trip} />
                 })}
 
             </CandidateContainer>
