@@ -64,23 +64,28 @@ export const applyToTrip = async(id, useHistory, body) => {
     }
 }
 
-export function useGetTipDetails(id, initialState) {
-    const [ details, setDetails ] = useState(initialState)
+export function useGetTipDetails(id) {
+    const [ details, setDetails ] = useState({})
 
-    const token = window.localStorage.getItem('token')
-    const axiosConfig = {
+    const getTripDetails = async() => {
+        
+        const token = window.localStorage.getItem('token')
+        const axiosConfig = {
         headers:  {
             auth: token
         }
     }
+        const response = await axios.get(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/manoel-queiroz/trip/${id}`, axiosConfig)
+            setDetails(response.data.trip)
+    }
+
+    
 
     useEffect(() => {
-        axios.get(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/manoel-queiroz/trip/${id}`, axiosConfig).then(response => {
-            setDetails(response.data.trip)
-        })
+        getTripDetails()
     }, [])
 
-    return details
+    return { details, getTripDetails }
 }
 
 export function makeDecision(tripId, candidateId, choice) {
