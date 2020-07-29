@@ -1,10 +1,9 @@
 import * as moment from 'moment'
 import * as fs from 'fs'
-import { deserialize } from 'v8'
 
 const fileData: string = fs.readFileSync("./events.json").toString()
 let events
-
+moment.locale('pt-br')
 try {
   events = JSON.parse(fileData)
 } catch (error) {
@@ -12,11 +11,7 @@ try {
   console.log("Erro ao ler a base de dados: " + error.message)
 }
 
-moment.locale("pt_br")
-//meu computador foi comprado na irlanda, por isso usando o pt_br aqui.
-
-// se declararia moment.locale("en_gb")
-console.log(events)
+// se declararia moment.locale("en-gb")
 
 events.forEach((item: any) => {
   let start = moment(item.startDate)
@@ -47,8 +42,8 @@ type event = {
 const newEvent: event = {
   name: process.argv[2],
   description: process.argv[3],
-  startDate: moment(process.argv[4], "DD/MM/YYYY HH:mmZ"),
-  endDate: moment(process.argv[5], "DD/MM/YYYY HH:mmZ")
+  startDate: moment(process.argv[4], "DD/MM/YYYY HH:mm"),
+  endDate: moment(process.argv[5], "DD/MM/YYYY HH:mm")
 }
 
 const addEvent = (newEvent: any) : void => {
@@ -64,8 +59,10 @@ const addEvent = (newEvent: any) : void => {
   }
 
   try{
-    const event: string = JSON.stringify(newEvent, null, 2)
-    fs.writeFileSync("./events.json", event)
+    const data:any = JSON.parse(fileData)
+    data.push(newEvent)
+    // const event: string = JSON.stringify(newEvent, null, 2)
+    fs.writeFileSync("./events.json", JSON.stringify(data, null, 2))
   } catch(error){
     console.log("Erro ao atualizar.")
   }
