@@ -1,0 +1,148 @@
+[
+  {
+    "name": "Manoel Neto",
+    "dateOfBirth": "13/06/1993",
+    "cpf": "111.111.111-11",
+    "balance": 1000,
+    "statement": [
+      {
+        "value": 200,
+        "date": "01/08/2020",
+        "description": "Transferência recebida por mim",
+        "processed": true
+      },
+      {
+        "value": 1000,
+        "date": "01/08/2020",
+        "description": "Depósito feita por mim",
+        "processed": true
+      },
+      {
+        "value": 1000,
+        "date": "01/08/2020",
+        "description": "Transferência feita por mim",
+        "processed": true
+      },
+      {
+        "value": 1000,
+        "date": "01/08/2020",
+        "description": "Conta de luz.",
+        "processed": true
+      },
+      {
+        "value": 1000,
+        "date": "01/08/2020",
+        "description": "Depósito de dinheiro",
+        "processed": true
+      },
+      {
+        "value": 1000,
+        "date": "01/08/2020",
+        "description": "Depósito de dinheiro",
+        "processed": true
+      },
+      {
+        "date": "01/08/2020",
+        "value": 200,
+        "description": "Transferência feita para Kevin Casserly",
+        "processed": true
+      },
+      {
+        "date": "01/08/2020",
+        "value": 200,
+        "description": "Transferência feita para Kevin Casserly",
+        "processed": true
+      },
+      {
+        "date": "10/09/2020",
+        "value": 200,
+        "description": "Internet",
+        "processed": true
+      }
+    ]
+  },
+  {
+    "name": "Kevin Casserly",
+    "dateOfBirth": "18/05/1994",
+    "cpf": "222.222.222-22",
+    "balance": 600,
+    "statement": [
+      {
+        "value": 200,
+        "date": "01/08/2020",
+        "description": "Transferência recebida por mim",
+        "processed": true
+      },
+      {
+        "value": 1000,
+        "date": "01/08/2020",
+        "description": "Depósito feita por mim",
+        "processed": true
+      },
+      {
+        "value": 1000,
+        "date": "01/08/2020",
+        "description": "Transferência feita por mim",
+        "processed": true
+      },
+      {
+        "value": 1000,
+        "date": "01/08/2020",
+        "description": "Conta de luz.",
+        "processed": true
+      },
+      {
+        "value": 1000,
+        "date": "01/08/2020",
+        "description": "Depósito de dinheiro",
+        "processed": true
+      },
+      {
+        "value": 1000,
+        "date": "01/09/2020",
+        "description": "Depósito de dinheiro",
+        "processed": false
+      },
+      {
+        "date": "01/08/2020",
+        "value": 200,
+        "description": "Transferência recebida de Manoel Neto",
+        "processed": true
+      },
+      {
+        "date": "01/08/2020",
+        "value": 200,
+        "description": "Transferência recebida de Manoel Neto",
+        "processed": true
+      }
+    ]
+  },
+  {
+    "name": "Lísia Faleiros",
+    "dateOfBirth": "26/11/1996",
+    "cpf": "333.333.333-33",
+    "balance": 800,
+    "statement": [
+      {
+        "date": "01/08/2020",
+        "value": 200,
+        "description": "Transferência feita para Walkiria Passos Queiroz",
+        "processed": true
+      }
+    ]
+  },
+  {
+    "name": "Walkiria Passos Queiroz",
+    "dateOfBirth": "29/08/1968",
+    "cpf": "444.444.444-44",
+    "balance": 200,
+    "statement": [
+      {
+        "date": "01/08/2020",
+        "value": 200,
+        "description": "Transferência recebida de Lísia Faleiros",
+        "processed": true
+      }
+    ]
+  }
+]
