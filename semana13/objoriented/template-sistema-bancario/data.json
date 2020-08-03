@@ -1,0 +1,23 @@
+[
+  {
+    "balance": 0,
+    "transactions": [],
+    "name": "Manoel Neto",
+    "cpf": "111.111.111-11",
+    "dateOfBirth": "13/06/1993"
+  },
+  {
+    "balance": 0,
+    "transactions": [],
+    "name": "Kevin Casserly",
+    "cpf": "222.222.222-22",
+    "dateOfBirth": "18/05/1994"
+  },
+  {
+    "balance": 0,
+    "transactions": [],
+    "name": "Lísia Queiroz",
+    "cpf": "333.333.333-33",
+    "dateOfBirth": "26/11/1996"
+  }
+]
