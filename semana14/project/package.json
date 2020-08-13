@@ -11,7 +11,9 @@
   "author": "Manoel Neto",
   "license": "ISC",
   "dependencies": {
+    "@types/express": "^4.17.0",
     "@types/node": "^14.0.27",
+    "express": "^4.17.0",
     "ts-node": "^8.10.2",
     "typescript": "^3.9.7"
   },
